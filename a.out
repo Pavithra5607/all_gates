@@ -1,0 +1,80 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000216f6662a10 .scope module, "all_gates_tb" "all_gates_tb" 2 1;
+ .timescale 0 0;
+v00000216f6693390_0 .var "a", 0 0;
+v00000216f6693930_0 .net "and_out", 0 0, L_00000216f6662e70;  1 drivers
+v00000216f6693c50_0 .var "b", 0 0;
+v00000216f6693cf0_0 .net "nand_out", 0 0, L_00000216f6663260;  1 drivers
+v00000216f6693570_0 .net "nor_out", 0 0, L_00000216f6693f80;  1 drivers
+v00000216f66932f0_0 .net "not_out", 0 0, L_00000216f6694120;  1 drivers
+v00000216f6693a70_0 .net "or_out", 0 0, L_00000216f67caf20;  1 drivers
+v00000216f6693430_0 .net "xnor_out", 0 0, L_00000216f66940b0;  1 drivers
+v00000216f66934d0_0 .net "xor_out", 0 0, L_00000216f6693ff0;  1 drivers
+S_00000216f6662ba0 .scope module, "allg" "all_gates" 2 4, 3 1 0, S_00000216f6662a10;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "and_out";
+    .port_info 1 /OUTPUT 1 "nand_out";
+    .port_info 2 /OUTPUT 1 "or_out";
+    .port_info 3 /OUTPUT 1 "nor_out";
+    .port_info 4 /OUTPUT 1 "xor_out";
+    .port_info 5 /OUTPUT 1 "xnor_out";
+    .port_info 6 /OUTPUT 1 "not_out";
+    .port_info 7 /INPUT 1 "a";
+    .port_info 8 /INPUT 1 "b";
+L_00000216f6662e70 .functor AND 1, v00000216f6693390_0, v00000216f6693c50_0, C4<1>, C4<1>;
+L_00000216f6663260 .functor NAND 1, v00000216f6693390_0, v00000216f6693c50_0, C4<1>, C4<1>;
+L_00000216f67caf20 .functor OR 1, v00000216f6693390_0, v00000216f6693c50_0, C4<0>, C4<0>;
+L_00000216f6693f80 .functor NOR 1, v00000216f6693390_0, v00000216f6693c50_0, C4<0>, C4<0>;
+L_00000216f6693ff0 .functor XOR 1, v00000216f6693390_0, v00000216f6693c50_0, C4<0>, C4<0>;
+L_00000216f66940b0 .functor XNOR 1, v00000216f6693390_0, v00000216f6693c50_0, C4<0>, C4<0>;
+L_00000216f6694120 .functor NOT 1, v00000216f6693390_0, C4<0>, C4<0>, C4<0>;
+v00000216f67ca0f0_0 .net "a", 0 0, v00000216f6693390_0;  1 drivers
+v00000216f6696ef0_0 .net "and_out", 0 0, L_00000216f6662e70;  alias, 1 drivers
+v00000216f6662d30_0 .net "b", 0 0, v00000216f6693c50_0;  1 drivers
+v00000216f6662dd0_0 .net "nand_out", 0 0, L_00000216f6663260;  alias, 1 drivers
+v00000216f67cac10_0 .net "nor_out", 0 0, L_00000216f6693f80;  alias, 1 drivers
+v00000216f67cacb0_0 .net "not_out", 0 0, L_00000216f6694120;  alias, 1 drivers
+v00000216f67cad50_0 .net "or_out", 0 0, L_00000216f67caf20;  alias, 1 drivers
+v00000216f67cadf0_0 .net "xnor_out", 0 0, L_00000216f66940b0;  alias, 1 drivers
+v00000216f6693110_0 .net "xor_out", 0 0, L_00000216f6693ff0;  alias, 1 drivers
+    .scope S_00000216f6662a10;
+T_0 ;
+    %vpi_call 2 6 "$dumpfile", "all_gates_tb.vcd" {0 0 0};
+    %vpi_call 2 7 "$dumpvars" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000216f6693390_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000216f6693c50_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000216f6693390_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000216f6693c50_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000216f6693390_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000216f6693c50_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000216f6693390_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000216f6693c50_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 13 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "all_gates_tb.v";
+    "all_gates.v";
